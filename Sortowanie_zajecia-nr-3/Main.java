@@ -31,15 +31,30 @@ public class Main {
             }
         }
 */
+/*
+        // SORTOWANIE PRZEZ WSTAWIANIE (insert sort) implementacja wlasciwa
+        for (int i=1; i<tab2.length; ++i)
+        {
+            int value = tab2[i];
+            int j = i-1;
+
+            while (j>=0 && tab2[j] > value) // sprawdzanie czy j jest juz na 0 i porownanie elementu w indeksie "j" do value
+            {
+                tab2[j+1] = tab2[j]; // przesuniecie elementow czyli zrobienie miejsca dla elementu trzymanego w pomocniczej zmiennej "value"
+                j--; // zejscie
+            }
+            tab2[j+1] = value; // Wstawienie
+        }
+*/
         System.out.println("Wynik");
-        //System.out.println(Arrays.toString(insertSort(tab2)));    // z zwracaniem
+        //System.out.println(Arrays.toString(insertSort(tab2)));    // ze zwracaniem
         //insertSort2(tab2);    // bez zwracania
         System.out.println(Arrays.toString(tab2));
-        // oba rezultaty sa posortowane dlatego ze tablica w javie jest juz
-        // referencja(wskaznikiem na pamiec gdzie znajduje sie tablica) a typy proste jak bool, int, float itd sa przekazywane poprzez wartosc(kopie)
+        // oba rezultaty sa posortowane dlatego ze tablica w javie jest juz przekazywana jako
+        // REFERENCJA(wskaznikiem na pamiec gdzie znajduje sie tablica) a typy proste jak bool, int, float itd sa przekazywane poprzez WARTOSC(kopie)
     }
 
-    public static int[] insertSort(int[] tab){ // metoda statyczna w javie nie ma slowa kluczowego "function" jak np JavaScript,PHP,Lua
+    public static int[] insertSort(int[] tab){ // [metoda statyczna] w javie nie ma slowa kluczowego "function" jak np w JavaScript,PHP,Lua
                                                 // wiec nie mozna utworzyc funkcji dlatego robimy metode statyczna
                                                 // co oznacza ze cos jest statyczne? pola i metody statyczne w klasie sa atrybutami klasy nie INSTANCJI KLASY(obiektu)
                                                 // tzn ze nie musimy konkretyzowac obiektu(tworzyc instancje za pomoca operatora "new") by wywolac metode badz odwolac sie do pola
@@ -59,7 +74,7 @@ public class Main {
         return tab;
     }
 
-    public static void insertSort2(int[] tab){ // jezeli dziala na referencji to mozemy zrezygnowac z returna oraz typu zwracanego w metodzie
+    public static void insertSort2(int[] tab){ // jezeli dziala na referencji to mozemy zrezygnowac z return'a oraz typu zwracanego w metodzie
         for (int i = 0; i < tab.length-1; i++) {
             if (tab[i] > tab[i+1])
             {
