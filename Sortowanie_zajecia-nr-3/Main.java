@@ -8,34 +8,35 @@ public class Main {
     public static void main(String[] args) {
         // GENEROWANIE
         Random rand = new Random();
+        int[] tab = new int[10];
         int[] tab2 = new int[10];
         for (int i = 0; i < tab2.length; i++) {
             int val = rand.nextInt(10); // od 0 do 9 <0;10)
             System.out.println(val);
             tab2[i] = val;
         }
-/*
-        // SORTOWANIE PRZEZ WSTAWIANIE (insert sort)
-        for (int i = 0; i < tab2.length-1; i++) { // dlugoscTablicy-1 dlatego ze jak wejdzie na ostatni element tablicy
-                                                  //  to tab2[i+1] by wyszlo poza zakres i wyrzucilby wyjatek
-            if (tab2[i] > tab2[i+1])
+
+        // SORTOWANIE BABELKOWE (bubble sort) implementacja na zajeciach zoptymalizowany poprzez ifa wlasciwa implementacja go nie posiada
+        for (int i = 0; i < tab.length-1; i++) { // dlugoscTablicy-1 dlatego ze jak wejdzie na ostatni element tablicy
+                                                  //  to tab[i+1] by wyszlo poza zakres i wyrzucilby wyjatek
+            if (tab[i] > tab[i+1])
             {
                 for (int j = i; j >= 0; j--) {  // schodzenie i sortowanie
-                    if (tab2[j] > tab2[j+1])
+                    if (tab[j] > tab[j+1])
                     {
-                        int temp = tab2[j]; //swapping
-                        tab2[j] = tab2[j+1];
-                        tab2[j+1] = temp;
+                        int temp = tab[j]; //swapping
+                        tab[j] = tab[j+1];
+                        tab[j+1] = temp;
                     }
                 }
             }
         }
-*/
-/*
-        // SORTOWANIE PRZEZ WSTAWIANIE (insert sort) implementacja wlasciwa
+
+
+        // SORTOWANIE PRZEZ WSTAWIANIE (insert sort) implementacja wlasciwa(z neta)
         for (int i=1; i<tab2.length; ++i)
         {
-            int value = tab2[i];
+            int value = tab2[i]; // zmienna pomocnicza
             int j = i-1;
 
             while (j>=0 && tab2[j] > value) // sprawdzanie czy j jest juz na 0 i porownanie elementu w indeksie "j" do value
@@ -45,7 +46,7 @@ public class Main {
             }
             tab2[j+1] = value; // Wstawienie
         }
-*/
+
         System.out.println("Wynik");
         //System.out.println(Arrays.toString(insertSort(tab2)));    // ze zwracaniem
         //insertSort2(tab2);    // bez zwracania
@@ -74,7 +75,7 @@ public class Main {
         return tab;
     }
 
-    public static void insertSort2(int[] tab){ // jezeli dziala na referencji to mozemy zrezygnowac z return'a oraz typu zwracanego w metodzie
+    public static void insertSort2(int[] tab){ // jezeli dziala na referencji to mozemy zrezygnowac z return'a oraz typu zwracanego w metodzie jest to zmiana tylko kosmetyczna a z return'em jest wygodniejsze uzycie
         for (int i = 0; i < tab.length-1; i++) {
             if (tab[i] > tab[i+1])
             {
