@@ -24,7 +24,7 @@ public class Main {
         // znajdz najmniejsza sposob 2
         // ITERACJA z szukaniem najmniejszej
         int min = tab[0];  // dla min przypisujemy 1-wszy element tablicy
-                           // poniewaz gdybysmy dali 0 a zakres losowanych liczb by³by od +2 to najmniejsza liczba by³aby b³êdna
+                           // poniewaz gdybysmy dali 0 a zakres losowanych liczb bylby od +2 to najmniejsza liczba bylaby bledna
 
         for (int i = 1; i < tab.length; i++) { // dla i przypisujemy 1 gdyz element 0 juz jest "sprawdzony"
             min = Math.min(min, tab[i]); // metoda min zwraca minimalna wartosc ze swoich parametrow tj. (min, tab[i])
